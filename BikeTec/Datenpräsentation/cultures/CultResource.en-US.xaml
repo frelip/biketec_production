@@ -6,7 +6,7 @@
     <system:String x:Key="WindowStart-labelWILLKOMMEN">START</system:String>
     <system:String x:Key="WindowStart-labelINPUT">DATA IMPORT</system:String>
     <system:String x:Key="WindowStart-labelVERKAUFSPROGNOSE">SALES</system:String>
-    <system:String x:Key="WindowStart-labelPUFFER">BUFFER</system:String>
+    <system:String x:Key="WindowStart-labelPUFFER">STOCK</system:String>
     <system:String x:Key="WindowStart-labelNACHBESTELLUNG">ORDERS</system:String>
     <system:String x:Key="WindowStart-labelZUSAMMENFASSUNG">RESULT</system:String>
     <system:String x:Key="WindowStart-Title">BikeTec Production Planning System</system:String>
