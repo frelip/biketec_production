@@ -27,7 +27,7 @@
             </controls:WizardProgressBar>
             -->
 
-        <Grid x:Name="welcomeText" Margin="-71,46,71,-46" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="5" Visibility="Visible">
+        <Grid x:Name="welcomeText" Margin="-71,46,71,-46" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="5" Visibility="Visible" d:IsHidden="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="892" />
                 <ColumnDefinition Width="6*" />
@@ -981,7 +981,7 @@
                 Style="{DynamicResource Poly_Zurueck}"
                 x:Name="buttonBackBuffer" Content="Zurück" Click="backBuffer" VerticalAlignment="Bottom" Margin="774,0,0,6" HorizontalAlignment="Left" Background="#FF8FE611" Width="66" Height="33" RenderTransformOrigin="-0.714,-0.431" />
             <Label
-            	Content="Hier aufgezeigt sind die vom Produktionsplanungssystem vorgeschlagenen Puffer. Sie können diese entweder&#xA;unverändert übernehmen, oder ganz bzw. teilweise anpassen."
+            	Content="Hier aufgezeigt sind die vom Produktionsplanungssystem berechneten Lagerbestände am Ende der Planperiode. &#xA;Sie können diese bei Bedarf einfach direkt ändern."
             	Grid.Column="0"
             	Grid.Row="0"
             	HorizontalAlignment="Left"
@@ -990,19 +990,17 @@
             	Width="644"
             	Height="71" />
         </Grid>
-
-        <!-- Article Order Grid -->
         <Grid x:Name="ArticleOrderGrid" Margin="18,92,0,0" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="2" Visibility="Hidden">
             <Button 
-                Style="{DynamicResource Poly_Weiter}"
-                Margin="0,0,10,6" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FF8FE611" Height="33" Width="65"
+        		Style="{DynamicResource Poly_Weiter}"
+        		Margin="0,0,10,6" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FF8FE611" Height="33" Width="65"
 
-			Content="{DynamicResource WindowStart-labelNext}"
-			x:Name="buttonValidation"
-			Click="showButtonValidation" Visibility="Hidden" />
+        		Content="{DynamicResource WindowStart-labelNext}"
+        		x:Name="buttonValidation"
+        		Click="showButtonValidation" Visibility="Hidden" />
             <Button 
-                Style="{DynamicResource Poly_Zurueck}"
-                x:Name="buttonBackArticleOrder" Content="{DynamicResource WindowStart-labelBack}" Click="backArticleOrder" VerticalAlignment="Bottom" Margin="654,0,0,6" HorizontalAlignment="Left" Background="#FF8FE611" Height="33" Width="66" />
+        		Style="{DynamicResource Poly_Zurueck}"
+        		x:Name="buttonBackArticleOrder" Content="{DynamicResource WindowStart-labelBack}" Click="backArticleOrder" VerticalAlignment="Bottom" Margin="654,0,0,6" HorizontalAlignment="Left" Background="#FF8FE611" Height="33" Width="66" />
 
             <TextBox Height="23" HorizontalAlignment="Left" Margin="-10,41,0,0" x:Name="textBoxK21" VerticalAlignment="Top" Width="64" />
             <Label Content="K21:" Height="28" HorizontalAlignment="Left" Margin="-42,39,0,0" x:Name="label1" VerticalAlignment="Top" />
@@ -1179,17 +1177,19 @@
                 <ComboBoxItem Content="Schnell" />
             </ComboBox>
             <Label
-            	Content="In diesem Prozessschritt erfolgt die Festlegung der Bestellmengen von Fremdbezugsteilen. Sie können entweder&#xA;manuell Ihre eigenen Bestellwünsche erfassen oder die optimalen Bestellmengen vom System berechnen lassen.&#xA;Um die Bestellmengen vom System berechnen zu lassen, klicken Sie auf den entsprechenden Button."
-            	Grid.Column="0"
-            	Grid.Row="0"
-            	HorizontalAlignment="Left"
-            	VerticalAlignment="Top"
-            	Margin="-46,-32,0,0"
-            	Width="644"
-            	Height="71" />
-            <Button x:Name="buttonCalculateOrder" Content="Berechne&#xA;Bestellmengen" HorizontalAlignment="Left" Margin="610,39,0,0" Width="102" Height="39" Click="calculateOrder" VerticalAlignment="Top" BorderBrush="White" FontSize="11" Background="#FFB4BBC4"/>
+        		Content="In diesem Prozessschritt erfolgt die Festlegung der Bestellmengen von Fremdbezugsteilen. Sie können entweder&#xA;manuell Ihre eigenen Bestellwünsche erfassen oder die optimalen Bestellmengen vom System berechnen lassen.&#xA;Um die Bestellmengen vom System berechnen zu lassen, klicken Sie auf den entsprechenden Button."
+        		Grid.Column="0"
+        		Grid.Row="0"
+        		HorizontalAlignment="Left"
+        		VerticalAlignment="Top"
+        		Margin="-46,-32,0,0"
+        		Width="644"
+        		Height="71" />
+            <Button x:Name="buttonCalculateOrder" Content="Berechne&#xA;Bestellmengen" HorizontalAlignment="Left" Margin="564,436,0,0" Width="65" Height="34" Click="calculateOrder" VerticalAlignment="Top" BorderBrush="#FF707070" FontSize="9" Background="#FFB4BBC4" RenderTransformOrigin="0.096,-1.197"/>
 
         </Grid>
+
+        <!-- Article Order Grid -->
 
         <!-- Create Output Grid -->
         <Grid x:Name="outputGrid" Grid.RowSpan="2" Grid.ColumnSpan="5" Margin="0,37,0,0" Visibility="Hidden">
@@ -1306,15 +1306,15 @@
                 <DVC:LineSeries Title=" ... späteste Lieferzeit" IndependentValueBinding="{Binding Key}" DependentValueBinding="{Binding Value}" />
             </DVC:Chart>-->
 
-            <TextBlock Height="24" HorizontalAlignment="Left" Margin="99,177,0,0" x:Name="textBlock1" Text="Prognose des Lagerwerts:" VerticalAlignment="Top" FontWeight="Bold" />
-            <TextBlock Height="auto" Width="auto" FontWeight="Bold" HorizontalAlignment="Left" Margin="85,117,0,0" x:Name="textBlockBestellkosten" VerticalAlignment="Top" Text="Bestellkosten(€): " />
-            <TextBlock Height="20" Width="100" FontWeight="Bold" HorizontalAlignment="Left" Margin="203,117,0,0" x:Name="textBlockBestellkostenWert" VerticalAlignment="Top" />
+            <TextBlock Height="24" HorizontalAlignment="Left" Margin="99,177,0,0" x:Name="textBlock1" Text="Prognose des Lagerwerts:" VerticalAlignment="Top" FontWeight="Bold" Visibility="Hidden" />
+            <TextBlock Height="auto" Width="auto" FontWeight="Bold" HorizontalAlignment="Left" Margin="85,117,0,0" x:Name="textBlockBestellkosten" VerticalAlignment="Top" Text="Bestellkosten(€): " Visibility="Hidden" />
+            <TextBlock Height="20" Width="100" FontWeight="Bold" HorizontalAlignment="Left" Margin="203,117,0,0" x:Name="textBlockBestellkostenWert" VerticalAlignment="Top" Visibility="Hidden" />
 
-            <TextBlock Height="auto" Width="auto" FontWeight="Bold" HorizontalAlignment="Left" Margin="85,138,0,0" x:Name="textBlockMaterialkosten" VerticalAlignment="Top" Text="Materialkosten der Bestellung(€): " />
-            <TextBlock Height="23" Width="123" FontWeight="Bold" HorizontalAlignment="Left" Margin="277,138,0,0" x:Name="textBlockMaterialkostenWert" VerticalAlignment="Top" />
+            <TextBlock Height="auto" Width="auto" FontWeight="Bold" HorizontalAlignment="Left" Margin="85,138,0,0" x:Name="textBlockMaterialkosten" VerticalAlignment="Top" Text="Materialkosten der Bestellung(€): " Visibility="Hidden" />
+            <TextBlock Height="23" Width="123" FontWeight="Bold" HorizontalAlignment="Left" Margin="277,138,0,0" x:Name="textBlockMaterialkostenWert" VerticalAlignment="Top" Visibility="Hidden" />
 
-            <TextBlock Height="auto" Width="auto" FontWeight="Bold" HorizontalAlignment="Left" Margin="484,141,0,0" x:Name="textBlockAuslastung" VerticalAlignment="Top" Text="Auslastung(%): " Grid.ColumnSpan="2" />
-            <TextBlock Height="22" Width="112" FontWeight="Bold" HorizontalAlignment="Left" Margin="87.5,141,0,0" x:Name="textBlockAuslastungWert" VerticalAlignment="Top" Grid.Column="1" />
+            <TextBlock Height="auto" Width="auto" FontWeight="Bold" HorizontalAlignment="Left" Margin="484,141,0,0" x:Name="textBlockAuslastung" VerticalAlignment="Top" Text="Auslastung(%): " Grid.ColumnSpan="2" Visibility="Hidden" />
+            <TextBlock Height="22" Width="112" FontWeight="Bold" HorizontalAlignment="Left" Margin="87.5,141,0,0" x:Name="textBlockAuslastungWert" VerticalAlignment="Top" Grid.Column="1" Visibility="Hidden" />
 
             <TextBox Height="32" HorizontalAlignment="Left" Margin="93,98,0,0" x:Name="FileNameTextBox_Export" Text="Speicherort für input.xml auswählen"
                     VerticalAlignment="Top" Width="393" Visibility="Hidden" Grid.ColumnSpan="2"/>
@@ -1323,7 +1323,7 @@
             	Width="602"
             	Height="86"
             	Content="Die Planung wurde erfolgreich durchgeführt. Hier finden Sie eine Übersicht über das Ergebnis der Periode.&#xA;Sie haben nun die Möglichkeit das Ergebnis in eine XML-Datei zu speichern. Wählen  Sie hierfür den &#xA;Button &quot;Speichern&quot;." Margin="74,22,0,0" Grid.ColumnSpan="2" />
-            <Button x:Name="btnExportXML" Content="{DynamicResource WindowStart-labelSave}" HorizontalAlignment="Left" Margin="232.5,35,0,0" Width="102" Height="39" Click="btnExportFile" VerticalAlignment="Top" BorderBrush="White" FontSize="11" Background="#FFB4BBC4" Grid.Column="1"/>
+            <Button x:Name="btnExportXML" Content="{DynamicResource WindowStart-labelSave}" HorizontalAlignment="Left" Margin="199.5,495,0,0" Width="66" Height="34" Click="btnExportFile" VerticalAlignment="Top" BorderBrush="#FF707070" FontSize="11" Background="#FFB4BBC4" Grid.Column="1"/>
 
         </Grid>
         <Separator Height="8" HorizontalAlignment="Left" Margin="12,0,0,109" x:Name="separator2_Copy" VerticalAlignment="Bottom" Width="885" Grid.ColumnSpan="5" />

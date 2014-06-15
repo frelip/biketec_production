@@ -50,7 +50,7 @@ namespace BikeTec
             labelPUFFER.Background = null;
             labelNACHBESTELLUNG.Background = null;
             labelZUSAMMENFASSUNG.Background = null;
-            ChangeLanguage("en-US");
+            ChangeLanguage("de-DE");
 
         }
         private int m_progress;
@@ -346,17 +346,17 @@ namespace BikeTec
         void backErgebnis(object sender, RoutedEventArgs e)
         {
             ForecastGrid.Visibility = System.Windows.Visibility.Hidden;
-            ArticleOrderGrid.Visibility = System.Windows.Visibility.Hidden;
+            ArticleOrderGrid.Visibility = System.Windows.Visibility.Visible;
             bufferGrid.Visibility = System.Windows.Visibility.Hidden;
             ergebnisGrid.Visibility = System.Windows.Visibility.Hidden;
 
-            outputGrid.Visibility = System.Windows.Visibility.Visible;
+            outputGrid.Visibility = System.Windows.Visibility.Hidden;
             labelWILLKOMMEN.Background = null;
             labelINPUT.Background = null;
             labelVERKAUFSPROGNOSE.Background = null;
             labelPUFFER.Background = null;
-            labelNACHBESTELLUNG.Background = null;
-            labelZUSAMMENFASSUNG.Background = (Brush)bc.ConvertFrom("#FF7FD009");
+            labelNACHBESTELLUNG.Background = (Brush)bc.ConvertFrom("#FF7FD009");
+            labelZUSAMMENFASSUNG.Background = null;
         }
 
         /* //////////////
