@@ -1186,6 +1186,7 @@
         		Width="644"
         		Height="71" />
             <Button x:Name="buttonCalculateOrder" Content="Berechne&#xA;Bestellmengen" HorizontalAlignment="Left" Margin="564,436,0,0" Width="65" Height="34" Click="calculateOrder" VerticalAlignment="Top" BorderBrush="#FF707070" FontSize="9" Background="#FFB4BBC4" RenderTransformOrigin="0.096,-1.197"/>
+            <Button x:Name="buttonClearOrderData" Content="Bestellmengen&#xA;Zurücksetzen" HorizontalAlignment="Left" Margin="484,436,0,0" Width="65" Height="34" Click="clearOrderData" VerticalAlignment="Top" BorderBrush="#FF707070" FontSize="9" Background="#FFB4BBC4" RenderTransformOrigin="0.096,-1.197"/>
 
         </Grid>
 

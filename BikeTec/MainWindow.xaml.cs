@@ -597,6 +597,14 @@ namespace BikeTec
             buttonValidation.Visibility = System.Windows.Visibility.Visible;
         }
 
+        void clearOrderData(object sender, RoutedEventArgs e)
+        {
+            dc.ClearData();
+            clearTextBoxesOrderData();
+
+            buttonValidation.Visibility = System.Windows.Visibility.Hidden;
+        }
+
 
         void showButtonValidation(object sender, RoutedEventArgs e)
         {
